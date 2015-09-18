@@ -21,6 +21,9 @@ gem 'coffee-rails', '~> 4.0.0'
 # Use Kaminari for pagination
 gem 'kaminari'
 
+# Use Simple Form for forms
+gem 'simple_form'
+
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
