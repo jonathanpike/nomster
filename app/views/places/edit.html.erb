@@ -2,8 +2,8 @@
   <h1>Edit Your Place Details</h1>
   <%= simple_form_for @place do |f| %>
     <%= f.input :name, error: "Place name is required, please specify one" %>
-    <%= f.input :address %>
-    <%= f.input :description %>
+    <%= f.input :address, error: "Address is required, please specify one" %>
+    <%= f.input :description, error: "Description is required, please specify one" %>
     <br />
     <%= f.submit 'Update', :class => 'btn btn-primary' %>
   <% end %>
