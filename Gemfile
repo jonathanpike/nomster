@@ -27,6 +27,9 @@ gem 'kaminari'
 # Use Simple Form for forms
 gem 'simple_form'
 
+# Use Devise for Auth
+gem 'devise', '>= 3.2.4'
+
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
