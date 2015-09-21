@@ -30,6 +30,12 @@ gem 'simple_form'
 # Use Devise for Auth
 gem 'devise', '>= 3.2.4'
 
+# Use Geocoder for Geocoding
+gem 'geocoder'
+
+# Use Figaro
+gem 'figaro', '>=1.0.0'
+
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
