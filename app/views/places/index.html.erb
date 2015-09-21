@@ -4,6 +4,14 @@
     <i><%= place.address %></i><br /><br />
     <p><%= place.description %></p><br />
 
+    <% if place.photos.present? %>
+      <% place.photos.limit(1).each do |photo| %>
+        <%= image_tag photo.picture %>
+      <% end %>
+    <br /><br />
+    <% end %>
+   
+
     <% if place.user.present? %>
       <small><%= place.user.email %></small>
     <% end %>
