@@ -1,0 +1,18 @@
+Tue, 22 Sep 2015 10:26:58 +0000
+README.rdoc	Tue, 22 Sep 2015 10:26:43 +0000
+app/controllers/application_controller.rb	Thu, 17 Sep 2015 10:13:05 +0000
+app/controllers/comments_controller.rb	Mon, 21 Sep 2015 08:21:27 +0000
+app/controllers/photos_controller.rb	Mon, 21 Sep 2015 10:05:30 +0000
+app/controllers/places_controller.rb	Mon, 21 Sep 2015 10:27:25 +0000
+app/controllers/users_controller.rb	Tue, 22 Sep 2015 09:37:42 +0000
+app/helpers/application_helper.rb	Thu, 17 Sep 2015 10:13:05 +0000
+app/helpers/comments_helper.rb	Mon, 21 Sep 2015 08:14:34 +0000
+app/helpers/photos_helper.rb	Mon, 21 Sep 2015 09:09:09 +0000
+app/helpers/places_helper.rb	Thu, 17 Sep 2015 10:25:39 +0000
+app/helpers/users_helper.rb	Tue, 22 Sep 2015 09:33:17 +0000
+app/mailers/notification_mailer.rb	Tue, 22 Sep 2015 08:06:42 +0000
+app/models/comment.rb	Tue, 22 Sep 2015 08:16:30 +0000
+app/models/photo.rb	Mon, 21 Sep 2015 09:18:05 +0000
+app/models/place.rb	Mon, 21 Sep 2015 09:08:23 +0000
+app/models/user.rb	Mon, 21 Sep 2015 08:08:35 +0000
+app/uploaders/picture_uploader.rb	Mon, 21 Sep 2015 10:45:40 +0000
