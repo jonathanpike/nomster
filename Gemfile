@@ -42,6 +42,8 @@ gem 'carrierwave'
 # Use Fog
 gem "fog", "~> 1.3.1"
 
+gem "orphan_records"
+
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
