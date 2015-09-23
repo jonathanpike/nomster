@@ -16,36 +16,43 @@
 <br /><br />
 <h1 class="text-center">My Comments</h1>
 <br /><br />
-<% @user.comments.each do |comment| %>
-   <div class="col-xs-12 col-sm-6">
-    <h2 class="text-center"><%= link_to comment.place.name, place_path(comment.place) %></h2>
-    <blockquote>
-      <% if comment.humanized_rating.present? %>
-        <b><%= comment.humanized_rating %></b> - 
-      <% end %>
-      <%= comment.message %>
-      <small><%= comment.user.email %></small>
-    </blockquote>
-  </div>
+<% if @user.comments.present? %>
+  <% @user.comments.each do |comment| %>
+     <div class="col-xs-12 col-sm-6">
+      <h2 class="text-center"><%= link_to comment.place.name, place_path(comment.place) %></h2>
+      <blockquote>
+        <% if comment.humanized_rating.present? %>
+          <b><%= comment.humanized_rating %></b> - 
+        <% end %>
+        <%= comment.message %>
+        <small><%= comment.user.email %></small>
+      </blockquote>
+    </div>
+  <% end %>
+<% else %>
+    <h3 class="text-center">Nothing here yet</h3>
+    <br /><br />
 <% end %>
+
 <div class="clear"></div>
 
 <br /><br />
+
 <h2 class="text-center">My Places</h2>
 <br /><br />
-<% @user.places.each do |place| %>
-  <div class="booyah-box col-xs-10 col-xs-offset-1 photobox">
-    <h1><%= link_to place.name, place_path(place) %></h1>
-    <i><%= place.address %></i><br /><br />
-    <p><%= place.description %></p><br />
+<% if @user.places.present? %>
+  <% @user.places.each do |place| %>
+    <div class="booyah-box col-xs-10 col-xs-offset-1 photobox">
+      <h1><%= link_to place.name, place_path(place) %></h1>
+      <i><%= place.address %></i><br /><br />
+      <p><%= place.description %></p><br />
 
-    <% if place.photos.present? %>
-      <% place.photos.limit(1).each do |photo| %>
-        <%= image_tag photo.picture %>
+      <% if place.photos.present? %>
+        <% place.photos.limit(1).each do |photo| %>
+          <%= image_tag photo.picture %>
+        <% end %>
+      <br /><br />
       <% end %>
-    <br /><br />
-    <% end %>
-   
 
     <% if place.user.present? %>
       <small><%= place.user.email %></small>
@@ -61,5 +68,8 @@
         </blockquote>
       </div>
       <% end %>
-  </div>
+    </div>
+  <% end %>
+<% else %>
+  <h3 class="text-center">Nothing here yet</h3>
 <% end %>
