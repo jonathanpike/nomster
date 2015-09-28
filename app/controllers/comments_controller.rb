@@ -6,22 +6,19 @@ class CommentsController < ApplicationController
     redirect_to place_path(@place)
   end
 
+  # edit_place_comment_path(place, comment)
+  # edit_comment_path(comment)
   def edit
-    @place = Place.find(params[:id])
-
-    if @place.comments.user != current_user
-      return render :text => 'Not Allowed', :status => :forbidden
-    end
+    @comment = current_user.comments.find(params[:id])
+   
   end
-
+  
   def update
-    @place = Place.find(params[:id])
-    if @place.comments.user != current_user
-      return render :text => 'Not Allowed', :status => :forbidden
-    end
-
-    @place.update_attributes(comment_params)
-    if @place.comments.valid?
+    @comment = current_user.comments.find(params[:id])
+   
+  
+    @comment.update_attributes(comment_params)
+    if @comment.valid?
       redirect_to root_path
     else
       render :edit, :status => :unprocessable_entity
@@ -29,12 +26,9 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    @place = Place.find(params[:id])
-    if @place.comments.user != current_user
-      return render :text => 'Not Allowed', :status => :forbidden
-    end
-
-    @place.comments.destroy
+    @comment = current_user.comments.find(params[:id])
+    
+    @comment.destroy
     redirect_to root_path
   end
 
