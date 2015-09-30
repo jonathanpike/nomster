@@ -36,11 +36,18 @@ class PlacesControllerTest < ActionController::TestCase
 
     assert_response :unprocessable_entity
   end
+  
+  test "create place without login" do
+     post :create, :place => { :name => "Bob's Pizza", :address => "2233 Delkus Crescent, Mississauga, Ontario L5A 1K8",
+    :description => "Awesome pizza!"}
+    
+    assert_redirected_to new_user_session_path
+  end
 
   test "should show place" do
     place = FactoryGirl.create(:place)
 
-    get :show, id: place
+    get :show, id: place.id
     assert_response :success
   end
 

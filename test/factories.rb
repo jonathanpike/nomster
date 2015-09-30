@@ -16,6 +16,7 @@ FactoryGirl.define do
 
   factory :comment do
     rating '3_stars'
+    message 'Awesome place!'
     association :user
     association :place
   end
