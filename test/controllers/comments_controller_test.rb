@@ -37,7 +37,7 @@ class CommentsControllerTest < ActionController::TestCase
     comment = FactoryGirl.create(:comment)
     sign_in comment.user
 
-    patch :update, place_id: place.id, comment_id: comment.id, :comment => {:message => "Fantastic!", :rating => "5_stars"}
+    patch :update, place_id: place.id, id: comment.id, :comment => {:message => "Fantastic!", :rating => "5_stars"}
     assert_redirected_to place_path(place)
   end
   
@@ -45,7 +45,7 @@ class CommentsControllerTest < ActionController::TestCase
     place = FactoryGirl.create(:place)
     comment = FactoryGirl.create(:comment)
     
-    patch :update, place_id: place.id, comment_id: comment.id, :comment => {:message => "Fantastic!", :rating => "5_stars"}
+    patch :update, place_id: place.id, id: comment.id, :comment => {:message => "Fantastic!", :rating => "5_stars"}
     assert_redirected_to new_user_session_path
   end
   
@@ -55,7 +55,7 @@ class CommentsControllerTest < ActionController::TestCase
     user = FactoryGirl.create(:user)
     sign_in user
 
-    patch :update, place_id: place.id, comment_id: comment.id,  :comment => {:message => "Fantastic!", :rating => "5_stars"}
+    patch :update, place_id: place.id, id: comment.id,  :comment => {:message => "Fantastic!", :rating => "5_stars"}
     assert_response :forbidden
   end
   
@@ -65,7 +65,7 @@ class CommentsControllerTest < ActionController::TestCase
     sign_in comment.user
 
     assert_difference('place.comments.count', -1) do
-      delete :destroy, place_id: place.id, comment_id: comment.id 
+      delete :destroy, place_id: place.id, id: comment.id 
     end
 
     assert_redirected_to place_path(place)
@@ -75,7 +75,7 @@ class CommentsControllerTest < ActionController::TestCase
     place = FactoryGirl.create(:place)
     comment = FactoryGirl.create(:comment)
 
-    delete :destroy, place_id: place.id, comment_id: comment.id 
+    delete :destroy, place_id: place.id, id: comment.id 
     assert_redirected_to new_user_session_path
   end
   
@@ -87,7 +87,7 @@ class CommentsControllerTest < ActionController::TestCase
     comment = FactoryGirl.create(:comment)
 
      assert_no_difference('place.comments.count') do
-        delete :destroy, place_id: place.id, comment_id: comment.id 
+        delete :destroy, place_id: place.id, id: comment.id 
     end
     
     assert_response :forbidden
