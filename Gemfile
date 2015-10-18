@@ -39,12 +39,17 @@ gem 'figaro', '>=1.0.0'
 # Use Carrier Wave for Uploads
 gem 'carrierwave'
 
-# Use Fog
-gem "fog", "~> 1.3.1"
+# Use Carrierwave AWS 
+gem 'carrierwave-aws'
 
-gem "orphan_records"
-
+# User FactoryGirl for Testing
 gem "factory_girl_rails", "~> 4.0"
+
+# Use MiniMagick for Image Manipulation
+gem 'mini_magick'
+
+# Use FancyBox 2 for Image Galleries
+gem 'fancybox2-rails', '~> 0.2.8'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby

@@ -75,9 +75,10 @@
 <div class="booyah-box col-xs-10 col-xs-offset-1 photobox">
     <h1><%= "Photos of #{@place.name}" %></h1><br />
     <% @place.photos.each do |photo| %>
-        <%= image_tag photo.picture %>
-        <br />
-        <blockquote><%= photo.caption %></blockquote>
+        <%= link_to photo.picture.url, {:class => 'fancybox', :rel => 'gallery', :title => photo.caption } do %>
+          <%= image_tag photo.picture.thumb, :class => 'thumb' %>
+        <% end %>
+
     <% end %>
 </div>
 <% end %>
