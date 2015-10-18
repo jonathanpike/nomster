@@ -48,7 +48,9 @@
 
     <% if place.photos.present? %>
       <% place.photos.limit(1).each do |photo| %>
-        <%= image_tag photo.picture %>
+        <%= link_to photo.picture.url, {:class => 'fancybox', :title => photo.caption } do %>
+          <%= image_tag photo.picture.thumb %>
+        <% end %>
       <% end %>
     <br /><br />
     <% end %>
